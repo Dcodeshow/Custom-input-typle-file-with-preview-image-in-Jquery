@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Home</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<h2 class="text-center">Custom File Input With Image Preview</h2>
+
+<div class="profile-images-card">
+	<div class="profile-images">
+		<img src="images/profile.png" id="upload-img">
+	</div>
+	<div class="custom-file">
+		<label for="fileupload">Upload Profile</label>
+		<input type="file" id="fileupload">
+	</div>
+</div>
+
+
+
+
+
+<script src="js/jquery-latest.min.js"></script>
+<script>
+	$(function(){
+		$("#fileupload").change(function(event) {
+			var x = URL.createObjectURL(event.target.files[0]);
+			$("#upload-img").attr("src",x);
+			console.log(event);
+		});
+	})
+</script>
+</body>
+</html>
